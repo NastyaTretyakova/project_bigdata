@@ -1,0 +1,213 @@
+[2022-12-12 18:44:01,288] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: prepare_data.get_last_id scheduled__2022-11-28T20:37:00+00:00 [queued]>
+[2022-12-12 18:44:01,437] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: prepare_data.get_last_id scheduled__2022-11-28T20:37:00+00:00 [queued]>
+[2022-12-12 18:44:01,505] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12 18:44:01,556] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-12-12 18:44:01,570] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12 18:44:01,847] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): get_last_id> on 2022-11-28 20:37:00+00:00
+[2022-12-12 18:44:01,891] {standard_task_runner.py:52} INFO - Started process 1699 to run task
+[2022-12-12 18:44:02,042] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'prepare_data', 'get_last_id', 'scheduled__2022-11-28T20:37:00+00:00', '--job-id', '723', '--raw', '--subdir', 'DAGS_FOLDER/prepare_data.py', '--cfg-path', '/tmp/tmpl90krge3', '--error-file', '/tmp/tmpm7gsm46i']
+[2022-12-12 18:44:02,054] {standard_task_runner.py:80} INFO - Job 723: Subtask get_last_id
+[2022-12-12 18:44:02,568] {task_command.py:369} INFO - Running <TaskInstance: prepare_data.get_last_id scheduled__2022-11-28T20:37:00+00:00 [running]> on host cfea470654c7
+[2022-12-12 18:44:03,729] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=prepare_data
+AIRFLOW_CTX_TASK_ID=get_last_id
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-28T20:37:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-28T20:37:00+00:00
+[2022-12-12 18:44:03,930] {base.py:68} INFO - Using connection ID 'postgres_default' for task execution.
+[2022-12-12 18:44:04,325] {local_task_job.py:84} ERROR - Received SIGTERM. Terminating subprocesses
+[2022-12-12 18:44:04,401] {process_utils.py:129} INFO - Sending Signals.SIGTERM to group 1699. PIDs of all processes in the group: [1699]
+[2022-12-12 18:44:04,413] {process_utils.py:80} INFO - Sending the signal Signals.SIGTERM to group 1699
+[2022-12-12 18:44:04,417] {taskinstance.py:1541} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-12-12 18:44:04,461] {logging_mixin.py:115} WARNING - --- Logging error ---
+[2022-12-12 18:44:04,688] {logging_mixin.py:115} WARNING - Traceback (most recent call last):
+[2022-12-12 18:44:04,692] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1706, in _execute_context
+    cursor, statement, parameters, context
+[2022-12-12 18:44:04,694] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+[2022-12-12 18:44:04,697] {logging_mixin.py:115} WARNING - psycopg2.OperationalError: terminating connection due to administrator command
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+[2022-12-12 18:44:04,709] {logging_mixin.py:115} WARNING - 
+The above exception was the direct cause of the following exception:
+[2022-12-12 18:44:04,712] {logging_mixin.py:115} WARNING - Traceback (most recent call last):
+[2022-12-12 18:44:04,718] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1451, in _run_raw_task
+    self._execute_task_with_callbacks(context, ***_mode)
+[2022-12-12 18:44:04,722] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1598, in _execute_task_with_callbacks
+    result = self._execute_task(context, task_orig)
+[2022-12-12 18:44:04,759] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1659, in _execute_task
+    result = execute_callable(context=context)
+[2022-12-12 18:44:04,851] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+[2022-12-12 18:44:04,868] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+[2022-12-12 18:44:04,871] {logging_mixin.py:115} WARNING -   File "/opt/airflow/dags/prepare_data.py", line 22, in get_last_id
+    ti.xcom_push(key='last_id', value=data[0])
+[2022-12-12 18:44:04,926] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 71, in wrapper
+    return func(*args, session=session, **kwargs)
+[2022-12-12 18:44:04,935] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 2380, in xcom_push
+    session=session,
+[2022-12-12 18:44:04,941] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 68, in wrapper
+    return func(*args, **kwargs)
+[2022-12-12 18:44:04,945] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/xcom.py", line 206, in set
+    cls.map_index == map_index,
+[2022-12-12 18:44:04,949] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/query.py", line 3111, in delete
+    execution_options={"synchronize_session": synchronize_session},
+[2022-12-12 18:44:04,952] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 1670, in execute
+    result = conn._execute_20(statement, params or {}, execution_options)
+[2022-12-12 18:44:04,956] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1520, in _execute_20
+    return meth(self, args_10style, kwargs_10style, execution_options)
+[2022-12-12 18:44:04,959] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/sql/elements.py", line 314, in _execute_on_connection
+    self, multiparams, params, execution_options
+[2022-12-12 18:44:04,961] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1399, in _execute_clauseelement
+    cache_hit=cache_hit,
+[2022-12-12 18:44:04,970] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1749, in _execute_context
+    e, statement, parameters, cursor, context
+[2022-12-12 18:44:04,982] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1930, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+[2022-12-12 18:44:04,986] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/util/compat.py", line 211, in raise_
+    raise exception
+[2022-12-12 18:44:04,988] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/base.py", line 1706, in _execute_context
+    cursor, statement, parameters, context
+[2022-12-12 18:44:05,001] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/sqlalchemy/engine/default.py", line 716, in do_execute
+    cursor.execute(statement, parameters)
+[2022-12-12 18:44:05,004] {logging_mixin.py:115} WARNING - sqlalchemy.exc.OperationalError: (psycopg2.OperationalError) terminating connection due to administrator command
+server closed the connection unexpectedly
+	This probably means the server terminated abnormally
+	before or while processing the request.
+
+[SQL: DELETE FROM xcom WHERE xcom.key = %(key_1)s AND xcom.run_id = %(run_id_1)s AND xcom.task_id = %(task_id_1)s AND xcom.dag_id = %(dag_id_1)s AND xcom.map_index = %(map_index_1)s]
+[parameters: {'key_1': 'last_id', 'run_id_1': 'scheduled__2022-11-28T20:37:00+00:00', 'task_id_1': 'get_last_id', 'dag_id_1': 'prepare_data', 'map_index_1': -1}]
+(Background on this error at: http://sqlalche.me/e/14/e3q8)
+[2022-12-12 18:44:05,027] {logging_mixin.py:115} WARNING - 
+During handling of the above exception, another exception occurred:
+[2022-12-12 18:44:05,043] {logging_mixin.py:115} WARNING - Traceback (most recent call last):
+[2022-12-12 18:44:05,072] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/logging/__init__.py", line 1025, in emit
+    msg = self.format(record)
+[2022-12-12 18:44:05,078] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/logging/__init__.py", line 869, in format
+    return fmt.format(record)
+[2022-12-12 18:44:05,093] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/logging/__init__.py", line 616, in format
+    record.exc_text = self.formatException(record.exc_info)
+[2022-12-12 18:44:05,179] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/logging/__init__.py", line 566, in formatException
+    traceback.print_exception(ei[0], ei[1], tb, None, sio)
+[2022-12-12 18:44:05,182] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/traceback.py", line 104, in print_exception
+    type(value), value, tb, limit=limit).format(chain=chain):
+[2022-12-12 18:44:05,184] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/traceback.py", line 508, in __init__
+    capture_locals=capture_locals)
+[2022-12-12 18:44:05,186] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/traceback.py", line 363, in extract
+    f.line
+[2022-12-12 18:44:05,194] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/traceback.py", line 285, in line
+    self._line = linecache.getline(self.filename, self.lineno).strip()
+[2022-12-12 18:44:05,196] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/linecache.py", line 16, in getline
+    lines = getlines(filename, module_globals)
+[2022-12-12 18:44:05,208] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/linecache.py", line 47, in getlines
+    return updatecache(filename, module_globals)
+[2022-12-12 18:44:05,212] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/linecache.py", line 136, in updatecache
+    with tokenize.open(fullname) as fp:
+[2022-12-12 18:44:05,214] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/tokenize.py", line 447, in open
+    buffer = _builtin_open(filename, 'rb')
+[2022-12-12 18:44:05,215] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1543, in signal_handler
+    raise AirflowException("Task received SIGTERM signal")
+[2022-12-12 18:44:05,218] {logging_mixin.py:115} WARNING - airflow.exceptions.AirflowException: Task received SIGTERM signal
+[2022-12-12 18:44:05,219] {logging_mixin.py:115} WARNING - Call stack:
+[2022-12-12 18:44:05,251] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/bin/airflow", line 8, in <module>
+    sys.exit(main())
+[2022-12-12 18:44:05,254] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/__main__.py", line 38, in main
+    args.func(args)
+[2022-12-12 18:44:05,258] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/cli_parser.py", line 51, in command
+    return func(*args, **kwargs)
+[2022-12-12 18:44:05,261] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/cli.py", line 99, in wrapper
+    return f(*args, **kwargs)
+[2022-12-12 18:44:05,265] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/scheduler_command.py", line 75, in scheduler
+    _run_scheduler_job(args=args)
+[2022-12-12 18:44:05,268] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/scheduler_command.py", line 46, in _run_scheduler_job
+    job.run()
+[2022-12-12 18:44:05,286] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/jobs/base_job.py", line 244, in run
+    self._execute()
+[2022-12-12 18:44:05,309] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/jobs/scheduler_job.py", line 727, in _execute
+    self.executor.start()
+[2022-12-12 18:44:05,352] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 358, in start
+    self.impl.start()
+[2022-12-12 18:44:05,379] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 300, in start
+    worker.start()
+[2022-12-12 18:44:05,381] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 112, in start
+    self._popen = self._Popen(self)
+[2022-12-12 18:44:05,385] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/context.py", line 223, in _Popen
+    return _default_context.get_context().Process._Popen(process_obj)
+[2022-12-12 18:44:05,387] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/context.py", line 277, in _Popen
+    return Popen(process_obj)
+[2022-12-12 18:44:05,390] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/popen_fork.py", line 20, in __init__
+    self._launch(process_obj)
+[2022-12-12 18:44:05,392] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/popen_fork.py", line 74, in _launch
+    code = process_obj._bootstrap()
+[2022-12-12 18:44:05,394] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 297, in _bootstrap
+    self.run()
+[2022-12-12 18:44:05,396] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 67, in run
+    return super().run()
+[2022-12-12 18:44:05,398] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/multiprocessing/process.py", line 99, in run
+    self._target(*self._args, **self._kwargs)
+[2022-12-12 18:44:05,400] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 190, in do_work
+    self.execute_work(key=key, command=command)
+[2022-12-12 18:44:05,402] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 84, in execute_work
+    state = self._execute_work_in_fork(command)
+[2022-12-12 18:44:05,403] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/executors/local_executor.py", line 124, in _execute_work_in_fork
+    args.func(args)
+[2022-12-12 18:44:05,405] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/cli_parser.py", line 51, in command
+    return func(*args, **kwargs)
+[2022-12-12 18:44:05,409] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/cli.py", line 99, in wrapper
+    return f(*args, **kwargs)
+[2022-12-12 18:44:05,410] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 375, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+[2022-12-12 18:44:05,412] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 181, in _run_task_by_selected_method
+    _run_task_by_local_task_job(args, ti)
+[2022-12-12 18:44:05,414] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 239, in _run_task_by_local_task_job
+    run_job.run()
+[2022-12-12 18:44:05,415] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/jobs/base_job.py", line 244, in run
+    self._execute()
+[2022-12-12 18:44:05,419] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/jobs/local_task_job.py", line 105, in _execute
+    self.task_runner.start()
+[2022-12-12 18:44:05,428] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/task/task_runner/standard_task_runner.py", line 41, in start
+    self.process = self._start_by_fork()
+[2022-12-12 18:44:05,431] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/task/task_runner/standard_task_runner.py", line 88, in _start_by_fork
+    args.func(args, dag=self.dag)
+[2022-12-12 18:44:05,433] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/cli_parser.py", line 51, in command
+    return func(*args, **kwargs)
+[2022-12-12 18:44:05,435] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/cli.py", line 99, in wrapper
+    return f(*args, **kwargs)
+[2022-12-12 18:44:05,437] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 375, in task_run
+    _run_task_by_selected_method(args, dag, ti)
+[2022-12-12 18:44:05,439] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 183, in _run_task_by_selected_method
+    _run_raw_task(args, ti)
+[2022-12-12 18:44:05,442] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/cli/commands/task_command.py", line 260, in _run_raw_task
+    error_file=args.error_file,
+[2022-12-12 18:44:05,444] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 71, in wrapper
+    return func(*args, session=session, **kwargs)
+[2022-12-12 18:44:05,447] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1508, in _run_raw_task
+    self.handle_failure(e, ***_mode, error_file=error_file, session=session)
+[2022-12-12 18:44:05,450] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/session.py", line 68, in wrapper
+    return func(*args, **kwargs)
+[2022-12-12 18:44:05,453] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/models/taskinstance.py", line 1889, in handle_failure
+    self.log.error("Task failed with exception", exc_info=(type(error), error, tb))
+[2022-12-12 18:44:05,455] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/logging/__init__.py", line 1407, in error
+    self._log(ERROR, msg, args, **kwargs)
+[2022-12-12 18:44:05,462] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/logging/__init__.py", line 1514, in _log
+    self.handle(record)
+[2022-12-12 18:44:05,464] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/logging/__init__.py", line 1524, in handle
+    self.callHandlers(record)
+[2022-12-12 18:44:05,467] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/logging/__init__.py", line 1586, in callHandlers
+    hdlr.handle(record)
+[2022-12-12 18:44:05,469] {logging_mixin.py:115} WARNING -   File "/usr/local/lib/python3.7/logging/__init__.py", line 894, in handle
+    self.emit(record)
+[2022-12-12 18:44:05,473] {logging_mixin.py:115} WARNING -   File "/home/airflow/.local/lib/python3.7/site-packages/airflow/utils/log/file_task_handler.py", line 67, in emit
+    self.handler.emit(record)
+[2022-12-12 18:44:05,477] {logging_mixin.py:115} WARNING - Message: 'Task failed with exception'
+Arguments: ()
+[2022-12-12 18:44:05,516] {standard_task_runner.py:97} ERROR - Failed to execute job 723 for task get_last_id ((psycopg2.OperationalError) could not translate host name "db" to address: Name or service not known
+
+(Background on this error at: http://sqlalche.me/e/14/e3q8); 1699)
+[2022-12-12 18:44:05,572] {process_utils.py:75} INFO - Process psutil.Process(pid=1699, status='terminated', exitcode=1, started='18:44:01') (1699) terminated with exit code 1
+[2022-12-12 18:44:05,577] {local_task_job.py:156} INFO - Task exited with return code 143

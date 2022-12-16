@@ -1,0 +1,50 @@
+[2022-12-12 18:25:54,765] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: prepare_data.transfer_data scheduled__2022-11-28T17:06:00+00:00 [queued]>
+[2022-12-12 18:25:55,010] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: prepare_data.transfer_data scheduled__2022-11-28T17:06:00+00:00 [queued]>
+[2022-12-12 18:25:55,018] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12 18:25:55,025] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-12-12 18:25:55,029] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12 18:25:55,162] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): transfer_data> on 2022-11-28 17:06:00+00:00
+[2022-12-12 18:25:55,187] {standard_task_runner.py:52} INFO - Started process 438 to run task
+[2022-12-12 18:25:55,238] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'prepare_data', 'transfer_data', 'scheduled__2022-11-28T17:06:00+00:00', '--job-id', '112', '--raw', '--subdir', 'DAGS_FOLDER/prepare_data.py', '--cfg-path', '/tmp/tmpkf2j2uno', '--error-file', '/tmp/tmpcp_cid9n']
+[2022-12-12 18:25:55,256] {standard_task_runner.py:80} INFO - Job 112: Subtask transfer_data
+[2022-12-12 18:25:56,390] {task_command.py:369} INFO - Running <TaskInstance: prepare_data.transfer_data scheduled__2022-11-28T17:06:00+00:00 [running]> on host a49e44ee4a94
+[2022-12-12 18:25:57,342] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=prepare_data
+AIRFLOW_CTX_TASK_ID=transfer_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-28T17:06:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-28T17:06:00+00:00
+[2022-12-12 18:25:57,488] {base.py:68} INFO - Using connection ID 'postgres_default' for task execution.
+[2022-12-12 18:25:58,075] {python.py:173} INFO - Done. Returned value was: None
+[2022-12-12 18:25:58,265] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=prepare_data, task_id=transfer_data, execution_date=20221128T170600, start_date=20221212T182554, end_date=20221212T182558
+[2022-12-12 18:25:58,392] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-12-12 18:25:58,663] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2022-12-12 18:25:58,791] {dagrun.py:562} INFO - Marking run <DagRun prepare_data @ 2022-11-28 17:06:00+00:00: scheduled__2022-11-28T17:06:00+00:00, externally triggered: False> successful
+[2022-12-12 18:25:58,796] {dagrun.py:622} INFO - DagRun Finished: dag_id=prepare_data, execution_date=2022-11-28 17:06:00+00:00, run_id=scheduled__2022-11-28T17:06:00+00:00, run_start_date=2022-12-12 18:25:42.536622+00:00, run_end_date=2022-12-12 18:25:58.795630+00:00, run_duration=16.259008, state=success, external_trigger=False, run_type=scheduled, data_interval_start=2022-11-28 17:06:00+00:00, data_interval_end=2022-11-28 17:07:00+00:00, dag_hash=74eff07297e15e09abd94d4632e2b9b9
+[2022-12-12 18:39:10,245] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: prepare_data.transfer_data scheduled__2022-11-28T17:06:00+00:00 [queued]>
+[2022-12-12 18:39:10,550] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: prepare_data.transfer_data scheduled__2022-11-28T17:06:00+00:00 [queued]>
+[2022-12-12 18:39:10,559] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12 18:39:10,565] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-12-12 18:39:10,599] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12 18:39:10,941] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): transfer_data> on 2022-11-28 17:06:00+00:00
+[2022-12-12 18:39:11,010] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'prepare_data', 'transfer_data', 'scheduled__2022-11-28T17:06:00+00:00', '--job-id', '95', '--raw', '--subdir', 'DAGS_FOLDER/prepare_data.py', '--cfg-path', '/tmp/tmpuxv45w6k', '--error-file', '/tmp/tmp7k1mcro3']
+[2022-12-12 18:39:11,018] {standard_task_runner.py:80} INFO - Job 95: Subtask transfer_data
+[2022-12-12 18:39:10,996] {standard_task_runner.py:52} INFO - Started process 394 to run task
+[2022-12-12 18:39:11,479] {task_command.py:369} INFO - Running <TaskInstance: prepare_data.transfer_data scheduled__2022-11-28T17:06:00+00:00 [running]> on host cfea470654c7
+[2022-12-12 18:39:11,853] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=prepare_data
+AIRFLOW_CTX_TASK_ID=transfer_data
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-28T17:06:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-28T17:06:00+00:00
+[2022-12-12 18:39:12,009] {base.py:68} INFO - Using connection ID 'postgres_default' for task execution.
+[2022-12-12 18:39:12,099] {python.py:173} INFO - Done. Returned value was: None
+[2022-12-12 18:39:12,167] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=prepare_data, task_id=transfer_data, execution_date=20221128T170600, start_date=20221212T183910, end_date=20221212T183912
+[2022-12-12 18:39:12,263] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-12-12 18:39:12,368] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

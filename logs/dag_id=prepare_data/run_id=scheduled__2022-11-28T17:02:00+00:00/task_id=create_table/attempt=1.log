@@ -1,0 +1,68 @@
+[2022-12-12 18:25:28,515] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: prepare_data.create_table scheduled__2022-11-28T17:02:00+00:00 [queued]>
+[2022-12-12 18:25:28,538] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: prepare_data.create_table scheduled__2022-11-28T17:02:00+00:00 [queued]>
+[2022-12-12 18:25:28,556] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12 18:25:28,558] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-12-12 18:25:28,565] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12 18:25:28,739] {taskinstance.py:1377} INFO - Executing <Task(PostgresOperator): create_table> on 2022-11-28 17:02:00+00:00
+[2022-12-12 18:25:28,767] {standard_task_runner.py:52} INFO - Started process 342 to run task
+[2022-12-12 18:25:28,866] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'prepare_data', 'create_table', 'scheduled__2022-11-28T17:02:00+00:00', '--job-id', '67', '--raw', '--subdir', 'DAGS_FOLDER/prepare_data.py', '--cfg-path', '/tmp/tmpd4audeew', '--error-file', '/tmp/tmp2bcmzdsi']
+[2022-12-12 18:25:28,870] {standard_task_runner.py:80} INFO - Job 67: Subtask create_table
+[2022-12-12 18:25:29,447] {task_command.py:369} INFO - Running <TaskInstance: prepare_data.create_table scheduled__2022-11-28T17:02:00+00:00 [running]> on host a49e44ee4a94
+[2022-12-12 18:25:30,039] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=prepare_data
+AIRFLOW_CTX_TASK_ID=create_table
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-28T17:02:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-28T17:02:00+00:00
+[2022-12-12 18:25:30,137] {base.py:68} INFO - Using connection ID 'postgres_default' for task execution.
+[2022-12-12 18:25:30,180] {dbapi.py:208} INFO - Running statement: CREATE TABLE IF NOT EXISTS prepared_data (
+	id SERIAL,
+	sensor_id BIGINT,
+	longitude FLOAT,
+	latitude FLOAT,
+	controller_id BIGINT,
+	datetime TIMESTAMP WITH TIME ZONE,
+	temperature INTEGER
+);, parameters: None
+[2022-12-12 18:25:30,189] {postgres.py:94} INFO - NOTICE:  relation "prepared_data" already exists, skipping
+
+[2022-12-12 18:25:31,163] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=prepare_data, task_id=create_table, execution_date=20221128T170200, start_date=20221212T182528, end_date=20221212T182531
+[2022-12-12 18:25:31,330] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-12-12 18:25:32,205] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-12-12 18:38:51,026] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: prepare_data.create_table scheduled__2022-11-28T17:02:00+00:00 [queued]>
+[2022-12-12 18:38:51,117] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: prepare_data.create_table scheduled__2022-11-28T17:02:00+00:00 [queued]>
+[2022-12-12 18:38:51,124] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12 18:38:51,128] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-12-12 18:38:51,130] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12 18:38:51,207] {taskinstance.py:1377} INFO - Executing <Task(PostgresOperator): create_table> on 2022-11-28 17:02:00+00:00
+[2022-12-12 18:38:51,220] {standard_task_runner.py:52} INFO - Started process 318 to run task
+[2022-12-12 18:38:51,236] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'prepare_data', 'create_table', 'scheduled__2022-11-28T17:02:00+00:00', '--job-id', '59', '--raw', '--subdir', 'DAGS_FOLDER/prepare_data.py', '--cfg-path', '/tmp/tmpoa0fbps6', '--error-file', '/tmp/tmp1kqnpo9q']
+[2022-12-12 18:38:51,242] {standard_task_runner.py:80} INFO - Job 59: Subtask create_table
+[2022-12-12 18:38:51,636] {task_command.py:369} INFO - Running <TaskInstance: prepare_data.create_table scheduled__2022-11-28T17:02:00+00:00 [running]> on host cfea470654c7
+[2022-12-12 18:38:52,555] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=prepare_data
+AIRFLOW_CTX_TASK_ID=create_table
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-28T17:02:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-28T17:02:00+00:00
+[2022-12-12 18:38:52,609] {base.py:68} INFO - Using connection ID 'postgres_default' for task execution.
+[2022-12-12 18:38:52,657] {dbapi.py:208} INFO - Running statement: CREATE TABLE IF NOT EXISTS prepared_data (
+	id SERIAL,
+	sensor_id BIGINT,
+	longitude FLOAT,
+	latitude FLOAT,
+	controller_id BIGINT,
+	datetime TIMESTAMP WITH TIME ZONE,
+	temperature INTEGER
+);, parameters: None
+[2022-12-12 18:38:52,661] {postgres.py:94} INFO - NOTICE:  relation "prepared_data" already exists, skipping
+
+[2022-12-12 18:38:52,758] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=prepare_data, task_id=create_table, execution_date=20221128T170200, start_date=20221212T183851, end_date=20221212T183852
+[2022-12-12 18:38:52,909] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-12-12 18:38:53,261] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check

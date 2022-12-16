@@ -1,0 +1,48 @@
+[2022-12-12 18:25:32,560] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: prepare_data.get_last_id scheduled__2022-11-28T17:01:00+00:00 [queued]>
+[2022-12-12 18:25:32,598] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: prepare_data.get_last_id scheduled__2022-11-28T17:01:00+00:00 [queued]>
+[2022-12-12 18:25:32,600] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12 18:25:32,603] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-12-12 18:25:32,605] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12 18:25:32,776] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): get_last_id> on 2022-11-28 17:01:00+00:00
+[2022-12-12 18:25:32,828] {standard_task_runner.py:52} INFO - Started process 362 to run task
+[2022-12-12 18:25:32,874] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'prepare_data', 'get_last_id', 'scheduled__2022-11-28T17:01:00+00:00', '--job-id', '77', '--raw', '--subdir', 'DAGS_FOLDER/prepare_data.py', '--cfg-path', '/tmp/tmpcr3_85ep', '--error-file', '/tmp/tmpb2phwgiu']
+[2022-12-12 18:25:32,898] {standard_task_runner.py:80} INFO - Job 77: Subtask get_last_id
+[2022-12-12 18:25:33,759] {task_command.py:369} INFO - Running <TaskInstance: prepare_data.get_last_id scheduled__2022-11-28T17:01:00+00:00 [running]> on host a49e44ee4a94
+[2022-12-12 18:25:34,936] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=prepare_data
+AIRFLOW_CTX_TASK_ID=get_last_id
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-28T17:01:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-28T17:01:00+00:00
+[2022-12-12 18:25:34,997] {base.py:68} INFO - Using connection ID 'postgres_default' for task execution.
+[2022-12-12 18:25:35,118] {python.py:173} INFO - Done. Returned value was: None
+[2022-12-12 18:25:35,318] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=prepare_data, task_id=get_last_id, execution_date=20221128T170100, start_date=20221212T182532, end_date=20221212T182535
+[2022-12-12 18:25:35,829] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-12-12 18:25:36,120] {local_task_job.py:273} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2022-12-12 18:38:55,270] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: prepare_data.get_last_id scheduled__2022-11-28T17:01:00+00:00 [queued]>
+[2022-12-12 18:38:55,487] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: prepare_data.get_last_id scheduled__2022-11-28T17:01:00+00:00 [queued]>
+[2022-12-12 18:38:55,490] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12 18:38:55,493] {taskinstance.py:1357} INFO - Starting attempt 1 of 1
+[2022-12-12 18:38:55,496] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-12-12 18:38:55,676] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): get_last_id> on 2022-11-28 17:01:00+00:00
+[2022-12-12 18:38:55,787] {standard_task_runner.py:52} INFO - Started process 336 to run task
+[2022-12-12 18:38:55,896] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'prepare_data', 'get_last_id', 'scheduled__2022-11-28T17:01:00+00:00', '--job-id', '67', '--raw', '--subdir', 'DAGS_FOLDER/prepare_data.py', '--cfg-path', '/tmp/tmppkwvqucv', '--error-file', '/tmp/tmppnja5tl1']
+[2022-12-12 18:38:56,000] {standard_task_runner.py:80} INFO - Job 67: Subtask get_last_id
+[2022-12-12 18:38:56,438] {task_command.py:369} INFO - Running <TaskInstance: prepare_data.get_last_id scheduled__2022-11-28T17:01:00+00:00 [running]> on host cfea470654c7
+[2022-12-12 18:38:57,020] {taskinstance.py:1571} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=prepare_data
+AIRFLOW_CTX_TASK_ID=get_last_id
+AIRFLOW_CTX_EXECUTION_DATE=2022-11-28T17:01:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-11-28T17:01:00+00:00
+[2022-12-12 18:38:57,122] {base.py:68} INFO - Using connection ID 'postgres_default' for task execution.
+[2022-12-12 18:38:57,454] {python.py:173} INFO - Done. Returned value was: None
+[2022-12-12 18:38:57,748] {taskinstance.py:1400} INFO - Marking task as SUCCESS. dag_id=prepare_data, task_id=get_last_id, execution_date=20221128T170100, start_date=20221212T183855, end_date=20221212T183857
+[2022-12-12 18:38:58,024] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-12-12 18:38:59,141] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
