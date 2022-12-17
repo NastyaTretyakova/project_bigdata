@@ -1,0 +1,5 @@
+psycopg2
+requests
+confluent_kafka
+apache-airflow
+apache-airflow-providers-postgres
